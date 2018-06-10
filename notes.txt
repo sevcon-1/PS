@@ -1,0 +1,28 @@
+$credential = Get-Credential
+
+$session = New-SFTPSession -ComputerName 'test.rebex.net:22' -Credential $Credential -AcceptKey
+
+$getParams = @{
+    SessionId = $session.SessionId
+    LocalPath = '<directory>'
+   RemoteFile = '<filename>'
+}
+Get-SFTPFile @getParams
+
+open sftp://user:password@example.com/ -hostkey="ssh-rsa 2048 xx:xx:xx:xx:xx:xx:xx:xx..."
+# Upload file
+put d:\examplefile.txt /home/user/
+# Exit WinSCP
+exit
+
+
+
+open sftp://demo:password@test.rebex.net/ 
+# Get file
+get readme.txt /
+# Exit WinSCP
+exit
+
+$SecureString = Read-Host -AsSecureString
+$StandardString = ConvertFrom-SecureString $SecureString
+echo $StandardString
