@@ -1,5 +1,5 @@
 param (
-    $localPath = "c:\tmp\gets",
+    $localPath = "c:\tmp\gets\",
     $remotePath = "/",
     $fileName = "readme.txt"
 )
